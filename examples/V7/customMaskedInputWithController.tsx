@@ -27,7 +27,10 @@ const CustomMaskedInput = (props) => {
       alwaysShowMask
       onChange={(e) => {
         e.persist();
-        onChange(e.target.value);
+        
+        if (onChange) {
+          onChange(e);
+        }
       }}
     >
       {(inputProps) => (
